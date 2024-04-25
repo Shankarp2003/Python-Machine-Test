@@ -1,0 +1,18 @@
+<!-- register_client.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Client</title>
+</head>
+<body>
+    <h1>Register Client</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="client_name">Client Name:</label>
+        <input type="text" id="client_name" name="client_name" required>
+        <button type="submit">Register</button>
+    </form>
+</body>
+</html>

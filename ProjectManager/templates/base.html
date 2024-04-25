@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Project Management System</title>
+</head>
+<body>
+    <header>
+        <h1>My Project Management System</h1>
+        <nav>
+            <ul>
+                <li><a href="{% url 'index' %}">Home</a></li>
+                <li><a href="{% url 'clients_list' %}">Clients</a></li>
+                <!-- Add links for other functionalities -->
+                {% if user.is_authenticated %}
+                <li><a href="{% url 'add_project' %}">Add Project</a></li>
+                {% endif %}
+                <!-- Add link to log out if user is authenticated -->
+                {% if user.is_authenticated %}
+                <li><a href="{% url 'logout' %}">Logout</a></li>
+                {% else %}
+                <!-- Add link to login if user is not authenticated -->
+                <li><a href="{% url 'login' %}">Login</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+    </header>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+    <footer>
+
+    </footer>
+</body>
+</html>

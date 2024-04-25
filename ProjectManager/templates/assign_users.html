@@ -1,0 +1,27 @@
+<!-- assign_users.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assign Users to Project</title>
+</head>
+<body>
+    <h1>Assign Users to Project "{{ project.name }}"</h1>
+    <form method="post">
+        {% csrf_token %}
+        <ul>
+        {% for user in users %}
+            <li>
+                <label>
+                    <input type="checkbox" name="users" value="{{ user.id }}">
+                    {{ user.username }}
+                </label>
+            </li>
+        {% endfor %}
+        </ul>
+        <button type="submit">Assign Users</button>
+    </form>
+</body>
+</html>

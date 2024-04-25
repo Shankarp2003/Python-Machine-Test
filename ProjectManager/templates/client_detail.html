@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Detail</title>
+</head>
+<body>
+    <h1>Client Detail</h1>
+    <p>Client Name: {{ client.client_name }}</p>
+    <h2>Projects:</h2>
+    <ul>
+        {% for project in projects %}
+            <li>{{ project.project_name }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
